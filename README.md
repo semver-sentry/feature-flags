@@ -2,7 +2,13 @@
 
 # Feature Flags
 
-This library gives you a fully functional "feature flag" functionality.
+This library gives you "feature flag" functionality.
+
+Why is this useful? If you want to implement "feature flags" in your application where features
+are only enabled for certain people, then this library will help. It allows you to do continuous
+delivery because you can ship features to production even when they are not quite ready for the masses,
+the trick is to deploy the feature disabled and enable it to only a select few. When it's ready
+you can remove the feature flag from the code and boom, the feature is now enabled for everyone.
 
 ## Usage
 
@@ -15,7 +21,7 @@ Injection Container then you can define this service in your services.yml.
 
 Check if a feature is enabled like this:
 
-```
+```php
 $featureEnabledChecker = new FeatureEnabledChecker(
     $myFeatureRepository
     $myFeatureFlagRepository,
