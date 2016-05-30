@@ -1,0 +1,22 @@
+{
+    "name": "emmetog/feature-flags",
+    "description": "A set of classes to easily use feature flags in a PHP application",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emmet O'Grady",
+            "email": "emmet789@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Emmetog\\FeatureFlag\\": "src/Emmetog/FeatureFlag"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^4.6"
+    }
+}
