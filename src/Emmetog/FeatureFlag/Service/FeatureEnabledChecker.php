@@ -19,8 +19,10 @@ class FeatureEnabledChecker
      */
     private $featureFlagRepo;
 
-    public function __construct(FeatureRepositoryInterface $featureRepo, FeatureFlagRepositoryInterface $featureFlagRepo)
-    {
+    public function __construct(
+        FeatureRepositoryInterface $featureRepo,
+        FeatureFlagRepositoryInterface $featureFlagRepo
+    ) {
         $this->featureRepo = $featureRepo;
         $this->featureFlagRepo = $featureFlagRepo;
     }
@@ -29,17 +31,14 @@ class FeatureEnabledChecker
     {
         try {
             $feature = $this->featureRepo->getFeatureByName($featureName);
-        } catch(ResourceNotFoundException $e)
-        {
+        } catch (ResourceNotFoundException $e) {
             throw new FeatureDoesNotExistException($featureName);
         }
 
         try {
             $featureFlag = $this->featureFlagRepo->getFeatureFlag($feature->getId(), $userId);
-        } catch(ResourceNotFoundException $e)
-        {
+        } catch (ResourceNotFoundException $e) {
             // Not specified, return the default.
-
             return $feature->isFeatureEnabledByDefault();
         }
 
