@@ -23,11 +23,11 @@ class FeatureFlag
      */
     private $isEnabled;
 
-    public function __construct($featureId, $isEnabled, $userId)
+    public function __construct($featureId, $userId, $isEnabled, $newParam)
     {
         $this->featureId = $featureId;
-        $this->isEnabled = $isEnabled;
         $this->userId = $userId;
+        $this->isEnabled = $isEnabled;
     }
 
     /**
