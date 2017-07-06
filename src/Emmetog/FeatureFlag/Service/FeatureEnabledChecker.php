@@ -32,6 +32,7 @@ class FeatureEnabledChecker
         try {
             $feature = $this->featureRepo->getFeatureByName($featureName);
         } catch (ResourceNotFoundException $e) {
+            // This feature doesn't exist.
             throw new FeatureDoesNotExistException($featureName);
         }
 
