@@ -29,3 +29,10 @@ $featureEnabledChecker = new FeatureEnabledChecker(
 
 $isFeatureEnabledForUser = $featureEnabledChecker->isFeatureEnabled('my_cool_feature', 'my_user_id');
 ```
+
+## Installation
+
+Install via composer:
+```
+$ composer require emmetog/feature-flags
+```
